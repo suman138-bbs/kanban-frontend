@@ -305,7 +305,9 @@ const Board = () => {
   };
 
   const handleTodoShare = (todo) => {
-    const todoURL = `${`http://localhost:5173/todo/`}${todo._id}`;
+    const todoURL = `${`https://kanbanfrontend1.netlify.app//todo/`}${
+      todo._id
+    }`;
     navigator.clipboard
       .writeText(todoURL)
       .then(() => {
