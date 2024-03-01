@@ -29,15 +29,7 @@ const Settings = () => {
       setIsLoading(false);
       return;
     }
-    if (!data.oldPassword) {
-      toast.error("Please provide Old password");
-      setIsLoading(false);
-      return;
-    } else if (!data.newPassword) {
-      toast.error("Provide a New Password also");
-      setIsLoading(false);
-      return;
-    }
+
     try {
       const { oldPassword, newPassword, name } = data;
 
