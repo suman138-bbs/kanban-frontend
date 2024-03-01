@@ -318,6 +318,15 @@ const Board = () => {
       });
   };
 
+  const MAX_TITLE_LENGTH = 15;
+
+  const truncateTitle = (title) => {
+    if (title.length > MAX_TITLE_LENGTH) {
+      return title.slice(0, MAX_TITLE_LENGTH) + "...";
+    }
+    return title;
+  };
+
   return (
     <>
       <div className={style.boardContainer}>
@@ -393,7 +402,15 @@ const Board = () => {
                         )}
                         <p>{todo.priority} priority</p>
                       </div>
-                      <h3>{todo.title}</h3>
+                      <h3
+                        title={
+                          todo.title.length > MAX_TITLE_LENGTH
+                            ? todo.title
+                            : null
+                        }
+                      >
+                        {truncateTitle(todo.title)}
+                      </h3>
                     </div>
                     <div className={style.threeDotContainer}>
                       {editTodoData.title === todo.title && (
@@ -569,7 +586,15 @@ const Board = () => {
                         )}
                         <p>{todo.priority} priority</p>
                       </div>
-                      <h3>{todo.title}</h3>
+                      <h3
+                        title={
+                          todo.title.length > MAX_TITLE_LENGTH
+                            ? todo.title
+                            : null
+                        }
+                      >
+                        {truncateTitle(todo.title)}
+                      </h3>
                     </div>
                     <div className={style.threeDotContainer}>
                       {editTodoData.title === todo.title && (
@@ -739,7 +764,15 @@ const Board = () => {
                         )}
                         <p>{todo.priority} priority</p>
                       </div>
-                      <h3>{todo.title}</h3>
+                      <h3
+                        title={
+                          todo.title.length > MAX_TITLE_LENGTH
+                            ? todo.title
+                            : null
+                        }
+                      >
+                        {truncateTitle(todo.title)}
+                      </h3>
                     </div>
                     <div className={style.threeDotContainer}>
                       {editTodoData.title === todo.title && (
@@ -911,7 +944,15 @@ const Board = () => {
                         )}
                         <p>{todo.priority} priority</p>
                       </div>
-                      <h3>{todo.title}</h3>
+                      <h3
+                        title={
+                          todo.title.length > MAX_TITLE_LENGTH
+                            ? todo.title
+                            : null
+                        }
+                      >
+                        {truncateTitle(todo.title)}
+                      </h3>
                     </div>
                     <div className={style.threeDotContainer}>
                       {editTodoData.title === todo.title && (
